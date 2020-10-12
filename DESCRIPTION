@@ -9,7 +9,7 @@ Description: Using Julia language and R for tracking tiny insects: an analysis o
     Tiny insects such as mycrohymenoptera seem to be few pixels in a frame. So, this package could help to fastly identify the position of the insect.
     THe output is a data.frame with each video frame, x and y position. Also for batch processing you could get a list with all videos and data.frames
 license: MIT
-Encoding: UTF-8
+Encoding: latin1
 LazyData: true
 Depends: 
     R (>= 3.1)
