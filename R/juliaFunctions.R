@@ -60,10 +60,10 @@ function edgeness(img)
 	Sy, Sx = Kernel.sobel()
 	b = brightness.(img)
 
-	diffgrady = convolve(b, Sy)
-	diffgradx = convolve(b, Sx)
+	∇y = convolve(b, Sy)
+	∇x = convolve(b, Sx)
 
-	sqrt.(diffgradx.^2 + diffgrady.^2)
+	sqrt.(∇x.^2 + ∇y.^2)
 end
 ")
 
