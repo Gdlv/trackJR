@@ -1,0 +1,18 @@
+Package: trackJR
+Type: Package
+Title: Using Julia language and R for tracking tiny insects
+Version: 0.1.0
+Author: Gerardo de la Vega
+Maintainer: Gerardo de la Vega <delavega.gerardo@gmail.com>
+Description: Using Julia language and R for tracking tiny insects: an analysis of microhymenoptera wasps and olfactometers responses
+    This package call Julia lang for its velocity to solve a simple edgeness function in each frame of a video and save its more brightness pixel to a data frame. 
+    Tiny insects such as mycrohymenoptera seem to be few pixels in a frame. So, this package could help to fastly identify the position of the insect.
+    THe output is a data.frame with each video frame, x and y position. Also for batch processing you could get a list with all videos and data.frames
+license: MIT
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 3.1)
+Imports:
+    JuliaCall
+RoxygenNote: 7.1.1
