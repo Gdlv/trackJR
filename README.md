@@ -3,7 +3,7 @@ Using Julia language and R for tracking tiny insects: an analysis of microhymeno
 
 explain how its work and a simple tutorial remember to install Julia and ffmpeg also the useful JuliaCall package for troubleshouting
 
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/JuliaCall)](https://cran.r-project.org/package=JuliaCall)
+(https://cran.r-project.org/package=JuliaCall)
 
 ## Troubleshooting and Ways to Get Help
 
