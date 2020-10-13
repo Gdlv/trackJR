@@ -9,8 +9,7 @@
 #'
 #'  #Just type the function
 #' firstJulia()
-#'
-
+#'#
 
 firstJulia<-function() {
   JuliaCall::julia_setup()
@@ -28,6 +27,7 @@ end
   JuliaCall::julia_command("
 brightness(c) = 0.3 * c.r + 0.59 * c.g + 0.11 * c.b
 ")
+
 
   JuliaCall::julia_command("
 function convolve(M, kernel)
