@@ -1,4 +1,7 @@
 #' firstJulia
+#'
+#' @param appendFun
+#'
 #'@description First step to check and start using Julia function for tracking tiny insect
 #'
 #' @return It return the linked function of Julia
@@ -8,7 +11,7 @@
 #' #Just type the function
 #' firstJulia()
 #'
-firstJulia<-function (){
+firstJulia<-function (appendFun){
 library(JuliaCall)
 
 julia_setup()
