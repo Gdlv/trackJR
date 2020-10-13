@@ -13,7 +13,7 @@
 
 firstJulia<-function() {
   JuliaCall::julia_setup()
-  JuliaCall::julia_install_package_if_needed("Images","ImageMagick","Statistics", "LinearAlgebra","ImageFiltering", "DataFrames")
+  JuliaCall::julia_install_package_if_needed(c("Images","ImageMagick","Statistics", "LinearAlgebra","ImageFiltering", "DataFrames"))
   JuliaCall::julia_command("
 begin
 	using Images
