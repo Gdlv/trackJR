@@ -11,8 +11,6 @@
 firstJulia<-function (){
 library(JuliaCall)
 
-message ('Remember using: options(JULIA_HOME ="C:/path_to/Julia 1.x.x/bin" )')
-
 julia_setup()
 
 julia_command("
