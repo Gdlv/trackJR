@@ -1,15 +1,13 @@
 #' firstJulia
 #'@description First step to check and start using Julia function for tracking tiny insect
-#' @param no parameters need
 #'
 #' @return It return the linked function of Julia
 #' @export
 #'
 #' @examples
 #' #Just type the function
-#' firstJUlia()
+#' firstJulia()
 #'
-
 firstJulia<-function (){
 library(JuliaCall)
 
