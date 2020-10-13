@@ -12,11 +12,11 @@
 #' firstJulia()
 #'
 firstJulia<-function (appendFun){
-library(JuliaCall)
 
-julia_setup()
 
-julia_command("
+  JuliaCall::julia_setup()
+
+  JuliaCall::julia_command("
 begin
 	using Images
 	using ImageMagick
@@ -27,11 +27,11 @@ begin
 end
 ")
 
-julia_command("
+  JuliaCall::julia_command("
 brightness(c) = 0.3 * c.r + 0.59 * c.g + 0.11 * c.b
 ")
 
-julia_command("
+  JuliaCall::julia_command("
 function convolve(M, kernel)
     height, width = size(kernel)
 
@@ -73,7 +73,7 @@ function convolve(M, kernel)
     return new_image
 end")
 
-julia_command("
+  JuliaCall::julia_command("
 function edgeness(img)
 	Sy, Sx = Kernel.sobel()
 	b = brightness.(img)
@@ -85,7 +85,7 @@ function edgeness(img)
 end
 ")
 
-julia_command("
+  JuliaCall::julia_command("
 function trackingR(path)
 	vidimg = sort(readdir(path))
 	coords= Dict()
