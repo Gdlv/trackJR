@@ -5,7 +5,7 @@
                            --------------------------------------\t
                            ')
   packageStartupMessage('Remember using: options(JULIA_HOME ="C:/path_to/Julia 1.x.x/bin")')
-  packageStartupMessage('Remember using: dyn.load("C:/path_to/Julia 1.x.x/bin/thepackagenotfound.dll")'
+  packageStartupMessage('Remember using: dyn.load("C:/path_to/Julia 1.x.x/bin/thepackagenotfound.dll")')
   packageStartupMessage('-------------------------------------')
   packageStartupMessage('Start Julia in R using "firstJulia()"')
   
