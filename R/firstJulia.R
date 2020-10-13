@@ -12,7 +12,13 @@
 #'
 
 
-firstJulia<-function (){
+firstJulia<-function(JULIA_HOME = NULL) {
+
+    JULIA_HOME <- JuliaCall::julia_locate(JULIA_HOME)
+
+    if (is.null(JULIA_HOME)) {
+      stop("Julia is not found.")
+    }
 
   JuliaCall::julia_setup()
 
