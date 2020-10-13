@@ -4,7 +4,7 @@
 \alias{firstJulia}
 \title{firstJulia}
 \usage{
-firstJulia(JULIA_HOME = NULL)
+firstJulia()
 }
 \value{
 It return the linked function of Julia
