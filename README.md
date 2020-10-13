@@ -22,6 +22,6 @@ Such problems are usually on Linux machines.
 The cause for the problem is that R cannot find the libstdc++ version needed by `Julia`.
 To deal with the problem, users can export "TheFolderContainsJulia/lib/julia" to R_LD_LIBRARY_PATH.
 
-A problem where Win could not find *.dll file when its exist in your PC:
-libdSFMT.dll
+### libdSFMT.dll
+The cause for the problem is that R cannot find the libdSFMT.dll version needed by `Julia`.
 dyn.load("the folder that contains julia binary/bin/libdSFMT.dll")
