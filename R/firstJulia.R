@@ -13,13 +13,14 @@
 
 firstJulia<-function() {
   JuliaCall::julia_setup()
-  cut("This could take few minutes, let's make a 'Mate' until Julia install some packages to work!")
+  cut("This could take few minutes, let's make a 'Mate' until Julia install some packages to work if they are not installed!")
   JuliaCall::julia_install_package_if_needed("Images")
   JuliaCall::julia_install_package_if_needed("ImageMagick")
   JuliaCall::julia_install_package_if_needed("Statistics")
   JuliaCall::julia_install_package_if_needed("LinearAlgebra")
   JuliaCall::julia_install_package_if_needed("ImageFiltering")
   JuliaCall::julia_install_package_if_needed("DataFrames")
+  cut("Now Julia is creating functions for tracking!")
   JuliaCall::julia_command("
 begin
 	using Images
