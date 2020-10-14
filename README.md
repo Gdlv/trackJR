@@ -8,6 +8,8 @@ We develop this package for [R](https://cran.r-project.org/) because (we love R!
 
 The main functions for tracking are in `Julia` language and used in R by [JuliaCall](https://cran.r-project.org/package=JuliaCall). These function are common from images processing and based on `convolve` with a kernel filter and take the `edgeness` of an image ([MIT Course](https://computationalthinking.mit.edu/Fall20/)).
 
+![window](figs/00000212.png)
+
 ## How to use *trackJR*
 
 ### Pre-installing *trackJR*
