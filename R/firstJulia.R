@@ -13,6 +13,7 @@
 
 firstJulia<-function() {
   JuliaCall::julia_setup()
+  cut("This could take few minutes, let's make a 'Mate' until Julia install some packages to work!")
   JuliaCall::julia_install_package_if_needed("Images")
   JuliaCall::julia_install_package_if_needed("ImageMagick")
   JuliaCall::julia_install_package_if_needed("Statistics")
