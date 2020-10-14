@@ -3,10 +3,9 @@ Using Julia language and R for tracking tiny insects: an analysis of microhymeno
 
 We develop this package for [R](https://cran.r-project.org/) because (we love R! and) most analyzes in ecological studies are in R enviroment. R is a more "mature" language than Julia. Although as is expect for other lenguages, such as [Phyton], Julia would be the place were newly ecological advances place.
 
+The main functions for tracking are in `Julia` language and used in R by [JuliaCall](https://cran.r-project.org/package=JuliaCall). These function are common from images proccessing and based on `convolve` with a kernel filter and take the `edgeness` of an image ([MIT Course](https://computationalthinking.mit.edu/Fall20/)).
 
-explain how its work and a simple tutorial remember to install Julia and ffmpeg also the useful JuliaCall package for troubleshouting
-
-(https://cran.r-project.org/package=JuliaCall)
+#### How to use *trackJR*
 
 #### Pre-installing *trackJR*
 1) Install [julia](https://julialang.org)
