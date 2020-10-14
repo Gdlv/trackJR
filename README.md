@@ -1,5 +1,5 @@
 # trackJR
-Using Julia language and R for tracking tiny insects: an analysis of microhymenoptera wasps and olfactometers responses. This package allow working and tracking tiny insect responses and is inspired in [pathtrackr](https://aharmer.github.io/pathtrackr/) and solution to work with tiny insect. Also, as use [Julia] (https://julialang.org), it allow "meeting the velocity" and could be very helpful for batch processing.
+Using Julia language and R for tracking tiny insects: an analysis of microhymenoptera wasps and olfactometers responses. This package allow working and tracking tiny insect responses and is inspired in [pathtrackr](https://aharmer.github.io/pathtrackr/) and solution to work with tiny insect. Also, as use [Julia](https://julialang.org), it allow "meeting the velocity" and could be very helpful for batch processing.
 
 We develop this package for [R](https://cran.r-project.org/) because (we love R! and) most analyzes in ecological studies are in R enviroment. R is a more "mature" language than Julia. Although as is expect for other lenguages, such as [Phyton], Julia would be the place were newly ecological advances place.
 
@@ -9,7 +9,7 @@ explain how its work and a simple tutorial remember to install Julia and ffmpeg 
 (https://cran.r-project.org/package=JuliaCall)
 
 #### Pre-installing *trackJR*
-1) Install [julia]
+1) Install [julia](https://julialang.org)
 2) *trackJR* package require [FFmpeg](https://ffmpeg.org) to be installed on your machine, which R calls via the *system()* function as well as [pathtrackr](https://aharmer.github.io/pathtrackr/). These links provide instructions for download and allow to use it: [Install FFmpeg on Windows](http://www.wikihow.com/Install-FFmpeg-on-Windows)
 
 #### installing *trackJR*
