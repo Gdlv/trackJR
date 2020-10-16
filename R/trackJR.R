@@ -21,7 +21,9 @@ trackJR<- function (pathDirAndFile){
     }
 
     system(paste("ffmpeg -i ",VFile," ",pathDirTemp,"%d.png",sep=""))
-    a<-JuliaCall::julia_call("trackingR", pathDirTemp)
+    a<-list()
+    a[[1]]<-JuliaCall::julia_call("trackingR", pathDirTemp)
+    a[[1]]$img<-magick::read_image(paste(pathDirTemp,"000001.png",sep=""))
     return(a)
 }
 
