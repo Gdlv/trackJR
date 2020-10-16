@@ -14,13 +14,45 @@
 firstJulia<-function() {
   JuliaCall::julia_setup()
   cat("This could take few minutes, let's make a 'Mate' until Julia install some packages to work if they are not installed!")
-  JuliaCall::julia_install_package_if_needed("Images")
-  JuliaCall::julia_install_package_if_needed("ImageMagick")
-  JuliaCall::julia_install_package_if_needed("Statistics")
-  JuliaCall::julia_install_package_if_needed("LinearAlgebra")
-  JuliaCall::julia_install_package_if_needed("ImageFiltering")
-  JuliaCall::julia_install_package_if_needed("DataFrames")
-  cat("Now Julia is creating functions for tracking!")
+  JuliaCall::julia_command("
+  tryusing(pkgsym) = try
+    @eval using $pkgsym
+    return true
+  catch e
+    return e
+  end
+")
+  JuliaCall::julia_command('
+  if tryusing("Images") !== true
+         import Pkg; Pkg.add("Images")
+       end
+')
+  JuliaCall::julia_command('
+  if tryusing("Images") !== true
+         import Pkg; Pkg.add("ImageMagick")
+       end
+')
+  JuliaCall::julia_command('
+  if tryusing("Images") !== true
+         import Pkg; Pkg.add("Statistics")
+       end
+')
+  JuliaCall::julia_command('
+  if tryusing("Images") !== true
+         import Pkg; Pkg.add("LinearAlgebra")
+       end
+')
+  JuliaCall::julia_command('
+  if tryusing("Images") !== true
+         import Pkg; Pkg.add("ImageFiltering")
+       end
+')
+  JuliaCall::julia_command('
+  if tryusing("Images") !== true
+         import Pkg; Pkg.add("DataFrames")
+       end
+')
+
   JuliaCall::julia_command("
 begin
 	using Images
