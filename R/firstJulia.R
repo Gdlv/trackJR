@@ -105,7 +105,6 @@ function trackingR(path)
 			data1.fr = [vidimg[j] for j=1:length(coords)]
 			data1.x = [coords[j][2][2] for j=1:length(coords)]
 			data1.y = [coords[j][2][1] for j=1:length(coords)]
-			#data1.br= [coords[j][1] for j=1:length(coords)]
 		return data1
 end
 ")
