@@ -21,7 +21,6 @@ trackJR<- function (pathDirAndFile){
     }
 
     system(paste("ffmpeg -i ",VFile," ",pathDirTemp,"%d.png",sep=""))
-    a<-list()
     a<-JuliaCall::julia_call("trackingR", pathDirTemp)
     return(a)
 }
