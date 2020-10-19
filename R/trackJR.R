@@ -25,4 +25,3 @@ trackJR<- function (pathDirAndFile){
     return(a)
 }
 
-str(a)
