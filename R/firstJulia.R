@@ -125,7 +125,7 @@ end
 
   JuliaCall::julia_command("
 function trackingR(path)
-	vidimg = sort(readdir(path))
+	vidimg = readdir(path)
 	coords= Dict()
 	Threads.@threads for i = 1:length(vidimg)
 	    imgg= load(string(path,vidimg[i]))
