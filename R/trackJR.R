@@ -10,7 +10,7 @@
 #'mypathDirandFile<-"C:/Users/test/vid.mp4"
 #'trackJR(mypathDirandFile)
 #'
-trackJR<- function (pathDirAndFile,rframe=20, timestop="00:05:00"){
+trackJR<- function (pathDirAndFile,rframes=20, timestop="00:05:00"){
   VFile<-pathDirAndFile
   pathDirTemp<-paste(tempdir(),"/trackJRtemp/",sep="")
 

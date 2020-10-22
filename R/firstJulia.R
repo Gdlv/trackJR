@@ -14,6 +14,8 @@
 firstJulia<-function() {
   JuliaCall::julia_setup()
   cat("This could take few minutes, let's make a 'Mate' until Julia install some packages to work if they are not installed!")
+  cat("-")
+
   JuliaCall::julia_command("
   tryusing(pkgsym) = try
     @eval using $pkgsym
