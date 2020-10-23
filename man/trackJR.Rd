@@ -4,14 +4,14 @@
 \alias{trackJR}
 \title{trackJR}
 \usage{
-trackJR(pathDirAndFile, rframe = 20, timestop = "00:05:00")
+trackJR(pathDirAndFile, rframes = 20, timestop = "00:05:00")
 }
 \arguments{
 \item{pathDirAndFile}{Path of the directory and the video file name.is a Character string; e.g. "C:myPC/video.mp4".}
 
-\item{timestop}{Video time duration for tracking. Default is 5 minutes. Bring as a character string "00:05:00".}
-
 \item{rframes}{Rate of frame which you want to extract or transform the video. Default is 20.}
+
+\item{timestop}{Video time duration for tracking. Default is 5 minutes. Bring as a character string "00:05:00".}
 }
 \value{
 (data.frame) It return the tracked video with 3 column, the frame with x and y position. Be careful with X and Y position in the video, frames could be had (0,0) origin position at top-left of the plot.

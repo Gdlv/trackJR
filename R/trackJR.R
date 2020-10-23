@@ -23,6 +23,11 @@ trackJR<- function (pathDirAndFile,rframes=20, timestop="00:05:00"){
 
     system(paste("ffmpeg -i ",VFile," -r ",rframes," -t ",timestop," ",pathDirTemp,"%d.png",sep=""))
     a<-JuliaCall::julia_call("trackingR", pathDirTemp)
+    #transform the file name in number frame
+    a$fr<-as.numeric(as.character(stringr::str_replace_all(a$fr, ".png","")))
+    a$x<-as.numeric(a$x)
+    a$y<-as.numeric(-a$y)
+    a<-
     return(a)
 }
 

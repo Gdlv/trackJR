@@ -26,6 +26,9 @@ trackJR_Batch<- function (pathDir,rframes=20,timestop="00:05:00"){
 
     system(paste("ffmpeg -i ",pathDir,"/",names(listF)[i]," -r ",rframes," -t ",timestop," ",pathDirTemp,"%d.png",sep=""))
     listF[[i]]<-JuliaCall::julia_call("trackingR", pathDirTemp)
-    }
+    listF[[i]]$fr<-as.numeric(as.character(stringr::str_replace_all(listF[[i]]$fr, ".png","")))
+    listF[[i]]$y<-as.numeric(-listF[[i]]$y)
+    listF[[i]]$x<-as.numeric(listF[[i]]$x)
+  }
   return(listF)
 }
