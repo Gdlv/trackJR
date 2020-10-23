@@ -3,3 +3,4 @@
 export(firstJulia)
 export(trackJR)
 export(trackJR_Batch)
+export(trackJR_ggplot)
