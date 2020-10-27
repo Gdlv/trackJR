@@ -75,9 +75,9 @@ graf2 + geom_rect(data = box1,mapping=aes(x=NULL,y=NULL,xmax=xmax,ymax=ymax,xmin
 
 4) Subset the main tracked data frame with the boxes you had created.
 ``` r
-estimuli<-trackJR_pbox(a,box1)
-control<-trackJR_pbox(a,box2)
-``` r
+estimuli<-trackJR_pbox(newA,box1)
+control<-trackJR_pbox(newA,box2)
+``` 
 
 
 
