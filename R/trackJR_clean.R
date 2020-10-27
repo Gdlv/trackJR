@@ -1,9 +1,17 @@
-# PARA EL BATCH
-# SELECCIONAR LA CARPETA DE LOS VIDEOS
-# SELECT THE COMMON POINT ON THE FIRST FRAME OF EACH VIDEO
-# SELECT OR DRAW A MASK TO USE. POINTS OUTSIDE THE MASK WILL BE SAVED IN THE LIST - OUT OF RANGE-
-
-
+#' trackJR_clean
+#' @description Track cleaning function to solve points in problems. Points selected will have the last previous correct position tracked.
+#' @param trackJRgg The function need the trackJR_ggplot generated to select the point.
+#'
+#' @return The function return two object. A new data frame with points corrected at it previous frame for each point in problems. Also a data frame called "points_in_problem" is created.
+#' @export
+#'
+#' @examples
+#' #'mypathDirandFile<-"C:/Users/test/vid.mp4"
+#'dataT<-trackJR(mypathDirandFile)
+#'graf<-trackJR_ggplot(mypathDirandFile,dataT)
+#'
+#'new_dataT<-trackJR_clean(graf)
+#'
 trackJR_clean<-function (trackJRgg){
 
   cat("select points to solve")
@@ -17,7 +25,7 @@ trackJR_clean<-function (trackJRgg){
       column(width = 7,
              actionButton("finish_close", "finish"),
              actionButton("exclude_toggle", "select points in problem"),
-             plotOutput("plot", brush = "plot_brush", width = "100%", height = '600px'),
+             plotOutput("plot", brush = "plot_brush", width = "90%", height = '400px'),
              )
     )
 
@@ -66,6 +74,8 @@ trackJR_clean<-function (trackJRgg){
     }
   datanew<-datagg
   return(datanew)
-}
+  cat("a new object called 'points_in_problem' was created" )
+
+  }
 
 

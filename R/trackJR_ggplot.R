@@ -10,7 +10,7 @@
 #' @examples
 #' #'mypathDirandFile<-"C:/Users/test/vid.mp4"
 #'dataT<-trackJR(mypathDirandFile)
-#'graf<-trackJR_ggplot(mypathDirandFile,dataA)
+#'graf<-trackJR_ggplot(mypathDirandFile,dataT)
 
 trackJR_ggplot<-function (pathDirtoVid,dataTrackJR,frameIMG=1){
   mypathDirandFile=pathDirtoVid
