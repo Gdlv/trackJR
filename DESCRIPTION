@@ -15,7 +15,7 @@ LazyData: true
 Depends: 
     R (>= 3.1)
 Imports:
-    JuliaCall, magick, ggplot2, stringr, shiny, miniUI, ggpubr
+    JuliaCall, magick, ggplot2, stringr, shiny, miniUI, ggpubr, dplyr
 RoxygenNote: 7.1.1
 URL: https://github.com/Gdlv/trackJR
 BugReports: https://github.com/Gdlv/trackJR/issues
