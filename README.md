@@ -2,7 +2,7 @@
 
 *Using Julia language and R for tracking tiny insects: an analysis of microhymenoptera wasps and olfactometers responses.*
 
-This package allow working and tracking tiny insect responses and is inspired in [pathtrackr](https://aharmer.github.io/pathtrackr/) and solution to work with tiny insect. Also, as use [Julia](https://julialang.org), it allow "meeting the velocity" and could be very helpful for batch processing.
+This package allow working and tracking tiny insect responses and is inspired in [pathtrackr](https://aharmer.github.io/pathtrackr/) and a solution to work with tiny insect. Also, as use [Julia](https://julialang.org), it allow "meeting the velocity" and could be very helpful for batch processing.
 
 We develop this package for [R](https://cran.r-project.org/) because (we love R! and) most analyzes in ecological studies are in R enviroment. R is a more "mature" language than Julia. Although, as is expect for other lenguages, such as [Phyton], Julia would be the place were newly ecological advances stay.
 
@@ -38,7 +38,7 @@ firstJulia()
 1) Now we can use the *trackJR* function. This function use just only one argument, the path to video file to track the insect. The output is a `data.frame` with three column (frame, X and Y). 
 ``` r
 vid<-"C:/Users/video001.mp4" 
-dataT<-<-trackJR(vid,timestop="00:02:00")
+dataT<-trackJR(vid,timestop="00:02:00")
 ```
 Also, if you have a dir with video files, you would use the *trackJR_Batch* function for batch processing and take the output as `list` object. This `list` have the video name with the three column (frame, X and Y). Be careful to write the path to the directory without last bar (`/`)
 ``` r
@@ -55,8 +55,8 @@ graf
 
 You can clean the points with the funtcion 'trackJR_clean'. Select the points (or region of interest) to solve, in a conservative way, the coordinates of the points. This solution put the previous points to "points_in_problem'. Also it create an object to understand which points had been corrected.
 ``` r
-newA<-trackJR_clean(graf)
-graf2<-trackJR_ggplot(mypathDirandFile,newA)
+newData<-trackJR_clean(graf)
+graf2<-trackJR_ggplot(mypathDirandFile,newData)
 ``` 
 ![window](figs/plot2.png)
 
@@ -75,8 +75,8 @@ graf2 + geom_rect(data = box1,mapping=aes(x=NULL,y=NULL,xmax=xmax,ymax=ymax,xmin
 
 4) Subset the main tracked data frame with the boxes you had created.
 ``` r
-estimuli<-trackJR_pbox(newA,box1)
-control<-trackJR_pbox(newA,box2)
+estimuli<-trackJR_pbox(newData,box1)
+control<-trackJR_pbox(newData,box2)
 ``` 
 
 
