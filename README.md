@@ -35,7 +35,7 @@ The first step to start using the package is to tell R where is Julia binary fil
 options(JULIA_HOME = "the folder that contains julia binary")
 firstJulia()
 ```
-1) Now we can use the *trackJR* function. This function use just only one argument, the path to video file to track the insect. The output is a `data.frame` with three column (frame, X and Y). 
+1) Now we can use the *trackJR* function. This function use three arguments, the path to video file to track the insect, the frame per seconds you want and the time to stop tracking. The output is a `data.frame` with three column (frame, X and Y). 
 ``` r
 vid<-"C:/Users/video001.mp4" 
 dataT<-trackJR(vid,timestop="00:02:00")
