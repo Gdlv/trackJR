@@ -22,5 +22,5 @@ Generate a ggplot class object for the tracking a video. As a ggplot object you 
 \examples{
 #'mypathDirandFile<-"C:/Users/test/vid.mp4"
 dataT<-trackJR(mypathDirandFile)
-graf<-trackJR_ggplot(mypathDirandFile,dataA)
+graf<-trackJR_ggplot(mypathDirandFile,dataT)
 }
