@@ -1,12 +1,17 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # trackJR
 
 *Using Julia language and R for tracking tiny insects: an analysis of microhymenoptera wasps and olfactometers responses.*
 
-This package allow working and tracking tiny insect responses and is inspired in [pathtrackr](https://aharmer.github.io/pathtrackr/) and a solution to work with tiny insect. Also, as use [Julia](https://julialang.org), it allow "meeting the velocity" and could be very helpful for batch processing. Also, many functions of the packages has [shiny](https://shiny.rstudio.com/) elements to help users. 
+This package allow working and tracking tiny insect responses. Also, as use [Julia](https://julialang.org), it allow "meeting the velocity" and could be very helpful for batch processing. Also, many functions of the packages has [shiny](https://shiny.rstudio.com/) elements to help users. 
 
 We develop this package for [R](https://cran.r-project.org/) because (we love R! and) most analyzes in ecological studies are in R environment. R is a more "mature" language than Julia. Although, as is expect for other languages, such as [Phyton](), Julia would be the place were newly ecological advances stay.
 
-The main functions for tracking are in `Julia` language and used in R by [JuliaCall](https://cran.r-project.org/package=JuliaCall). These function are common from images processing and based on `convolve` with a kernel filter and take the `edgeness` of an image ([MIT Course](https://computationalthinking.mit.edu/Fall20/)).
+`TrackJR`is inspired in the R package [pathtrackr](https://aharmer.github.io/pathtrackr/) and a solution to work with tiny insect. The main functions for tracking are in `Julia` language and used in R by [JuliaCall](https://cran.r-project.org/package=JuliaCall). These function are common from images processing and based on `convolve` with a kernel filter and take the `edgeness` of an image ([MIT Course](https://computationalthinking.mit.edu/Fall20/)).
 
 ![window](figs/00000212.png)
 
@@ -40,11 +45,6 @@ Now we can use the `trackJR` function. This function use three arguments, the pa
 ``` r
 vid<-"C:/Users/video001.mp4" 
 dataT<-trackJR(vid,timestop="00:02:00")
-```
-Also, if you have a dir with video files, you would use the `trackJR_Batch` function for batch processing and take the output as `list` object. This `list` have the video name with the three column (frame, X and Y). Be careful to write the path to the directory without last bar (`/`)
-``` r
-vidDir<-"C:/Users/the50videos" 
-dataDir<-trackJR_Batch(vidDir,timestop="00:02:00")
 ```
 # 2) Explore and plot the data!
 You can use a set of functions to manage and analyze the tracked insect path. You could solve some points in troubles (if there are). So, graphical explore the points in a ggplot plot. The `trackJR_ggplot` function use the first frame of your video to plot the data. If the data is explored, you can find that the *Y-axes* is negative. The video tracking set (0,0) coordinates at left-top. 
@@ -83,6 +83,21 @@ estimuli<-trackJR_pbox(newData,box1)
 control<-trackJR_pbox(newData,box2)
 ``` 
 
+##Work in Batch mode!
+We wrote some function to help the batch working. If you have a dir with video files, you would use the `trackJR_Batch` function for batch processing and take the output as `list` object. This `list` have the video name with the three column (frame, X and Y). Be careful to write the path to the directory without last bar (`/`)
+``` r
+vidDir<-"C:/Users/the50videos" 
+dataDir<-trackJR_Batch(vidDir,timestop="00:02:00")
+```
+Also, you could add the ggplot for each tracking to the list with the `trackJR_Batch_ggplot` function. You can inspect which video has points in problem and solve them with `trackJR_clean`. Here is an example to modify few points of one video from a list. 
+``` r
+vidDir<-"C:/Users/the50videos" 
+trackdata<-trackJR_Batch(vidDir,timestop="00:02:00")
+trackdata2<-trackJR_Batch_ggplot(vidDir,trackdata)
+trackdata2[[2]]$graf #Now it has the ggplot as an element.
+
+
+```
 
 
 ## Troubleshooting and Ways to Get Help

@@ -13,7 +13,7 @@
 #'
 trackJR_Batch<- function (pathDir,rframes=20,timestop="00:05:00"){
   listF<-as.list(list.files(pathDir))
-  names(listF)=listF
+  names(listF)<-listF
   for(i in 1:length(listF)){
     pathDirTemp<-paste(tempdir(),"/",names(listF)[i],"/",sep="")
 
@@ -30,7 +30,7 @@ trackJR_Batch<- function (pathDir,rframes=20,timestop="00:05:00"){
     data_trackJR$y<-as.numeric(data_trackJR$y *-1)
     data_trackJR$x<-as.numeric(data_trackJR$x)
 
-    listF[[i]]$dataTrackJR<-data_trackJR
+    suppressWarnings( listF[[i]]$"dataTrackJR"<-as.data.frame(data_trackJR) )
   }
   return(listF)
 }
