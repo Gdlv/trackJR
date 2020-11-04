@@ -46,7 +46,8 @@ trackJR_Batch<- function (pathDir,rframes=20,timestop="00:05:00"){
 #' @examples
 #'mypathDir<-"C:/Users/test" # write the string without last bar "/"
 #'trackdata<-trackJR_Batch(mypathDir)
-#'
+#'trackdata2<-trackJR_Batch_ggplot(mypathDir,trackdata)
+#'trackdata2 #Now it has the ggplot as an element.
 
 trackJR_Batch_ggplot<-function(pathDir,dataTrackJR_list){
   for(i in 1:length(dataTrackJR_list)){

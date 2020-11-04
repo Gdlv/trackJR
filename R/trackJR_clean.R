@@ -32,7 +32,7 @@ trackJR_clean<-function (trackJRgg){
   )
 
   server=function(input, output, session) {
-    graph<-        trackJRgg[["data"]]
+    graph<-trackJRgg[["data"]]
 
     vals <- reactiveValues(
       keeprows = rep(TRUE, nrow(graph))
@@ -54,7 +54,8 @@ trackJR_clean<-function (trackJRgg){
     selected<-reactive(input$plot_brush)
 
     observeEvent(input$plot_brush, {
-      points_in_problem <<-graph[!vals$keeprows, , drop = FALSE]
+      points_in_problem <-graph[!vals$keeprows, , drop = FALSE]
+      assign("points_in_problem",points_in_problem,envir = .GlobalEnv)
     })
 
     observeEvent(input$finish_close, {
