@@ -6,7 +6,7 @@ This package allow working and tracking tiny insect responses. Also, as use [Jul
 
 We develop this package for [R](https://cran.r-project.org/) because (we love R! and) most analyzes in ecological studies are in R environment. R is a more "mature" language than Julia. Although, as is expect for other languages, such as [Phyton](), Julia would be the place were newly ecological advances stay.
 
-`TrackJR`is inspired in the R package [pathtrackr](https://aharmer.github.io/pathtrackr/) and a solution to work with tiny insect. The main functions for tracking are in `Julia` language and used in R by [JuliaCall](https://cran.r-project.org/package=JuliaCall) package. These function are common from images processing and based on `convolve` with a kernel filter and take the `edgeness` of an image ([MIT Course](https://computationalthinking.mit.edu/Fall20/)).
+`TrackJR`is inspired in the R package [pathtrackr](https://aharmer.github.io/pathtrackr/) and a solution to work with tiny insect and was developed with the batch processing in mind. The main functions for tracking are in `Julia` language and used in R by [JuliaCall](https://cran.r-project.org/package=JuliaCall) package. These function are common from images processing and based on `convolve` with a kernel filter and take the `edgeness` of an image ([MIT Course](https://computationalthinking.mit.edu/Fall20/)).
 
 ![window](figs/00000212.png)
 
@@ -87,13 +87,44 @@ dataDir<-trackJR_Batch(vidDir,timestop="00:02:00")
 ```
 Also, you could add the ggplot for each tracking to the list with the `trackJR_Batch_ggplot` function. You can inspect which video has points in problem and solve them with `trackJR_clean`. Here is an example to modify few points of one video from a list. 
 ``` r
-vidDir<-"C:/Users/the50videos" 
+vidDir<-"C:/Users/the10videos" 
 trackdata<-trackJR_Batch(vidDir,timestop="00:02:00")
 trackdata2<-trackJR_Batch_ggplot(vidDir,trackdata)
 trackdata2[[2]]$graf #Now it has the ggplot as an element.
+```
+If you solve the points in problems you should overwrite the `dataTrackJR` elements of your batch list.
 
+``` r
+trackdata2[[7]]$graf
+trackdata2[[7]]$dataTrackJR<-trackJR_clean(trackdata2[[7]]$graf)
 
 ```
+Sometimes the record is not similar between trails. If you plot all the points with "Video1" as background, some tracked has to be corrected. For this trackdata you can add reference points and correct them with the `trackJR_correctXY`function. first use the `trackJR_refpoint`to create an "refpoint" object in your workspace and run a simple loop to add each reference point to your `list`.
+
+```r
+trackJR_refpoint(trackdata2)
+
+for(i in 1:length(trackdata2)){
+   trackdata2[[i]]$refpoint<-get(ls()[ls()==paste("refpoint",i,sep="")])
+   }
+
+tablaD<-data.frame(vid=character(),x=numeric(),y=numeric())
+
+for(i in 1: length(trackdata2)){
+  tablaD[i,1]<-do.call("rbind",al2[[i]][1])
+  tablaD[i,2:3]<-do.call("cbind",al2[[i]]$refpoint)
+}
+
+trackdata2[[1]]$graf + geom_point(data=tablaD,aes(x=x,y=y),col=2)
+
+```
+Then, you can correct the `trackJR_data` of particular tracked data in your list.
+
+```r
+trackdata2[[7]]<-trackJR_correctXY(trackdata2[[7]],Refpoint = trackdata2[[1]]$refpoint)
+
+```
+
 
 
 ## Troubleshooting and Ways to Get Help

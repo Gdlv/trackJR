@@ -69,9 +69,13 @@ trackJR_clean<-function (trackJRgg){
   row.names(datagg)<-datagg$fr
 
     for( i in 1: nrow(datagg)){
-    if(datagg$fr[i]%in%points_in_problem$fr){
+      if(datagg$fr[1]==points_in_problem$fr[1]){
+      nearest<-min(datagg[!(datagg$fr%in%points_in_problem$fr),"fr"])
+      datagg[1,]<-datagg[datagg$fr==nearest,]
+      }
+      if(datagg$fr[i]%in%points_in_problem$fr){
       datagg[i,c(2:3)]<-datagg[i-1,c(2:3)]
-    }
+      }
     }
   datanew<-datagg
   return(datanew)
