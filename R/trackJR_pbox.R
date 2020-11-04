@@ -10,7 +10,7 @@
 #' #' #'mypathDirandFile<-"C:/Users/test/vid.mp4"
 #' dataT<-trackJR(mypathDirandFile)
 #' graf<-trackJR_ggplot(mypathDirandFile,dataT)
-#' trackJR_box(graf2,"box1")
+#' trackJR_box(graf,"box1")
 #' estimuli<-trackJR_pbox(dataT,box1)
 
 trackJR_pbox<-function(data_trackJR,data_box){

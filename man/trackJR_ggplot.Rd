@@ -9,7 +9,7 @@ trackJR_ggplot(pathDirtoVid, dataTrackJR, frameIMG = 1)
 \arguments{
 \item{pathDirtoVid}{Character string for path to the video.}
 
-\item{dataTrackJR}{The R object of your workspace to plot the track.}
+\item{dataTrackJR}{The data of your tracked video to plot the track.}
 
 \item{frameIMG}{The frame you want to plot.}
 }
@@ -20,7 +20,7 @@ A ggplot object.
 Generate a ggplot class object for the tracking a video. As a ggplot object you can add more layers.
 }
 \examples{
-#'mypathDirandFile<-"C:/Users/test/vid.mp4"
+mypathDirandFile<-"C:/Users/test/vid.mp4"
 dataT<-trackJR(mypathDirandFile)
 graf<-trackJR_ggplot(mypathDirandFile,dataT)
 }

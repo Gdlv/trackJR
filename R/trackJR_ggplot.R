@@ -1,14 +1,14 @@
 #' trackJR_ggplot
 #'@description Generate a ggplot class object for the tracking a video. As a ggplot object you can add more layers.
 #' @param pathDirtoVid Character string for path to the video.
-#' @param dataTrackJR The R object of your workspace to plot the track.
+#' @param dataTrackJR The data of your tracked video to plot the track.
 #' @param frameIMG The frame you want to plot.
 #'
 #' @return A ggplot object.
 #' @export
 #'
 #' @examples
-#' #'mypathDirandFile<-"C:/Users/test/vid.mp4"
+#'mypathDirandFile<-"C:/Users/test/vid.mp4"
 #'dataT<-trackJR(mypathDirandFile)
 #'graf<-trackJR_ggplot(mypathDirandFile,dataT)
 

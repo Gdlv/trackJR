@@ -14,7 +14,7 @@ trackJR_Batch(pathDir, rframes = 20, timestop = "00:05:00")
 \item{timestop}{Video time duration for tracking. Default is 5 minutes. Bring as a character string "00:05:00".}
 }
 \value{
-(list) It return the tracked directory in a list with all the videos with 3 column, the frame with x and y position. Be careful with X and Y position in the video, frames could be had (0,0) origin position at top-left of the plot.
+(list) It return a list with all the videos with 3 column, the frame with x and y position. Be careful with X and Y position in the video, frames could be had (0,0) origin position at top-left of the plot.
 }
 \description{
 Tracking a video of tiny insect to get frame, position X and position Y.In a batch mode.
