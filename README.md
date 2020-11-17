@@ -124,9 +124,18 @@ Then, you can correct the `trackJR_data` of particular tracked data in your list
 trackdata2[[7]]<-trackJR_correctXY(trackdata2[[7]],Refpoint = trackdata2[[1]]$refpoint)
 
 ```
+In the same way you create boxes and subsets for your `dataTrackJR` data.frame, you could use the `trackJR_summ` function to summary your `list`.  
 
+```
+summaryData<-data.frame()
 
-
+for( i in 1:length(al2)){
+  summaryData[i,]<- trackJR_summ (al2[[i]]$dataTrackJR,list(box1,box2,box3),list("estimuli","control","blank"))
+  
+}
+summaryData
+```
+Now you have the points from all `dataTrackJR` from your `list` inside each box.
 ## Troubleshooting and Ways to Get Help
 
 #### Error: Julia is not found
