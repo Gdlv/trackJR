@@ -27,7 +27,7 @@ trackJR<- function (pathDirAndFile,rframes=20, timestop="00:05:00"){
     a$fr<-as.numeric(as.character(stringr::str_replace_all(a$fr, ".png","")))
     a$x<-as.numeric(a$x)
     a$y<-as.numeric(-a$y)
-    a<-
+
     return(a)
 }
 
