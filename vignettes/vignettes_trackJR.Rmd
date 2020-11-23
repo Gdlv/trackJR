@@ -45,7 +45,7 @@ devtools::install_github("Gdlv/trackJR")
 After installing the package you need to load *trackJR*. 
 
 ``` r
-Library(trackJR)
+library(trackJR)
 ```
 As you can see in the R console, there are few points to remember. *see troubleshooting points*.
 The first step to start using the package is to tell R where is Julia binary file. After that, you could just start using and load [Julia]() functions by `firstJulia` function. This function initialize the connection between [Julia]() and [R]() and write the image processing functions. This step, also install packages for Julia if they are not installed, so it could take few minutes. 

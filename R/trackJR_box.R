@@ -8,9 +8,8 @@
 #'
 #' @examples
 #' trackJR_box(graf2,"box1")
-#' trackJR_box(graf2,"box2")
 #' #Use it in a ggplot generated with trackJR_ggplot
-#' graf2 + geom_rect(data = box1,mapping=aes(x=NULL,y=NULL,xmax=xmax,ymax=ymax,xmin=xmin,ymin=ymin),fill="red",alpha=0.5) + geom_rect(data = box2,mapping=aes(x=NULL,y=NULL,xmax=xmax,ymax=ymax,xmin=xmin,ymin=ymin),fill="green",alpha=0.5)
+#' graf2 + geom_rect(data = box1,...)
 
 
 trackJR_box<-function (trackJRgg,var_name){
