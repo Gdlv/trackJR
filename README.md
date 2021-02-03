@@ -79,7 +79,7 @@ estimuli<-trackJR_pbox(newData,box1)
 control<-trackJR_pbox(newData,box2)
 ``` 
 
-##Work in Batch mode!
+## Work in Batch mode!
 We wrote some function to help the batch working. If you have a dir with video files, you would use the `trackJR_Batch` function for batch processing and take the output as `list` object. This `list` have the video name with the three column (frame, X and Y). Be careful to write the path to the directory without last bar (`/`)
 ``` r
 vidDir<-"C:/Users/the50videos" 
